@@ -51,7 +51,7 @@
   <!-- Executed before build -->
   <preBuildCommand>"$(ToolsDir)\swfmill\swfmill.exe" simple "$(ProjectDir)\$(ProjectName).xml" "$(ProjectDir)\obj\$(OutputName)"</preBuildCommand>
   <!-- Executed after build -->
-  <postBuildCommand alwaysRun="False" />
+  <postBuildCommand alwaysRun="False">xcopy "$(OutputFile)" "C:\Program Files (x86)\Steam\steamapps\common\Secret World Legends\Data\Gui\Custom\Flash\descendent.hud.reticle" /e /y</postBuildCommand>
   <!-- Other project options -->
   <options>
     <option showHiddenPaths="False" />
