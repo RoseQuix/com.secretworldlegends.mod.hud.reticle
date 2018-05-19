@@ -171,7 +171,7 @@ class descendent.hud.reticle.VitalGauge extends Gauge
 		var padding_degrees:Number = border_thickness / this._r;
 				
 		this._meter_barrier = new ReflectArcBarMeter(this._r - border_thickness, this._angle_a - padding_degrees, this._angle_b + padding_degrees, this._thickness + 2 * border_thickness,
-			null, new Color(0xFFED70, 100), new Color(0xFFFFFF, 100), 1.0, false);
+			null, new Color(0xB200FF, 100), new Color(0xFFFFFF, 100), 1.0, false);
 //			null, new Color(0xFFF585, 100), new Color(0xFFFFFF, 100), 1.0, false);
 //			null, new Color(0xFFFFFF, 100), new Color(0xFFFFFF, 100), 1.0, false);
 		this._meter_barrier.prepare(this.content);
