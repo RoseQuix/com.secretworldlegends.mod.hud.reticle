@@ -8,6 +8,7 @@ import descendent.hud.reticle.Color;
 import descendent.hud.reticle.Gauge;
 import descendent.hud.reticle.IMeter;
 import descendent.hud.reticle.DefaultArcBarMeter;
+import descendent.hud.reticle.ReflectArcBarMeter;
 import descendent.hud.reticle.NotchFactory;
 
 class descendent.hud.reticle.VitalGauge extends Gauge
