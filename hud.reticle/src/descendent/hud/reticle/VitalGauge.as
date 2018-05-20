@@ -7,7 +7,7 @@ import caurina.transitions.Tweener;
 import descendent.hud.reticle.Color;
 import descendent.hud.reticle.Gauge;
 import descendent.hud.reticle.IMeter;
-import descendent.hud.reticle.ReflectArcBarMeter;
+import descendent.hud.reticle.DefaultArcBarMeter;
 import descendent.hud.reticle.NotchFactory;
 
 class descendent.hud.reticle.VitalGauge extends Gauge
@@ -111,9 +111,7 @@ class descendent.hud.reticle.VitalGauge extends Gauge
 
 	private function prepare_shaft_a():Void
 	{
-		var notch:/*Number*/Array = [0.25, 0.5, 0.75];
-
-		this._shaft_a = new ReflectArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
+		this._shaft_a = new DefaultArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
 			new Color(0x20FF8A, 33), new Color(0x20FF8A, 100), new Color(0xFFFFFF, 100), 1.0, false);
 //			new Color(0x88FCCC, 33), new Color(0x88FCCC, 100), new Color(0xFFFFFF, 100), 1.0, false);
 		this._shaft_a.prepare(this.content);
@@ -121,9 +119,7 @@ class descendent.hud.reticle.VitalGauge extends Gauge
 
 	private function prepare_shaft_b():Void
 	{
-		var notch:/*Number*/Array = [0.25, 0.5, 0.75];
-
-		this._shaft_b = new ReflectArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
+		this._shaft_b = new DefaultArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
 			new Color(0xFF4646, 33), new Color(0xFF4646, 100), new Color(0xFFFFFF, 100), 1.0, false);
 //			new Color(0xFFB1B1, 33), new Color(0xFFB1B1, 100), new Color(0xFFFFFF, 100), 1.0, false);
 		this._shaft_b.prepare(this.content);
@@ -151,7 +147,7 @@ class descendent.hud.reticle.VitalGauge extends Gauge
 
 	private function prepare_meter_current_a():Void
 	{
-		this._meter_current_a = new ReflectArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
+		this._meter_current_a = new DefaultArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
 			null, new Color(0x20FF8A, 100), new Color(0xFFFFFF, 100), 1.0, false);
 //			null, new Color(0x88FCCC, 100), new Color(0xFFFFFF, 100), 1.0, false);
 		this._meter_current_a.prepare(this.content);
@@ -159,7 +155,7 @@ class descendent.hud.reticle.VitalGauge extends Gauge
 
 	private function prepare_meter_current_b():Void
 	{
-		this._meter_current_b = new ReflectArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
+		this._meter_current_b = new DefaultArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
 			null, new Color(0xFF4646, 100), new Color(0xFFFFFF, 100), 1.0, false);
 //			null, new Color(0xFFB1B1, 100), new Color(0xFFFFFF, 100), 1.0, false);
 		this._meter_current_b.prepare(this.content);
@@ -170,7 +166,7 @@ class descendent.hud.reticle.VitalGauge extends Gauge
 		var border_thickness:Number = this._thickness * 0.20;
 		var padding_degrees:Number = border_thickness / this._r;
 				
-		this._meter_barrier = new ReflectArcBarMeter(this._r - border_thickness, this._angle_a - padding_degrees, this._angle_b + padding_degrees, this._thickness + 2 * border_thickness,
+		this._meter_barrier = new DefaultArcBarMeter(this._r - border_thickness, this._angle_a - padding_degrees, this._angle_b + padding_degrees, this._thickness + 2 * border_thickness,
 			null, new Color(0xB200FF, 100), new Color(0xFFFFFF, 100), 1.0, false);
 //			null, new Color(0xFFF585, 100), new Color(0xFFFFFF, 100), 1.0, false);
 //			null, new Color(0xFFFFFF, 100), new Color(0xFFFFFF, 100), 1.0, false);
@@ -179,7 +175,7 @@ class descendent.hud.reticle.VitalGauge extends Gauge
 
 	private function prepare_meter_pending():Void
 	{
-		this._meter_pending = new ReflectArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
+		this._meter_pending = new DefaultArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
 			null, new Color(Colors.e_ColorHealthCritical, 100), new Color(0xFFFFFF, 100), 1.0, false);
 		this._meter_pending.prepare(this.content);
 	}
