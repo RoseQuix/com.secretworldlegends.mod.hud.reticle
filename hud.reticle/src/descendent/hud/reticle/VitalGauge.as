@@ -8,6 +8,7 @@ import descendent.hud.reticle.Color;
 import descendent.hud.reticle.Gauge;
 import descendent.hud.reticle.IMeter;
 import descendent.hud.reticle.ReflectArcBarMeter;
+import descendent.hud.reticle.NotchFactory;
 
 class descendent.hud.reticle.VitalGauge extends Gauge
 {
@@ -115,7 +116,6 @@ class descendent.hud.reticle.VitalGauge extends Gauge
 		this._shaft_a = new ReflectArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
 			new Color(0x20FF8A, 33), new Color(0x20FF8A, 100), new Color(0xFFFFFF, 100), 1.0, false);
 //			new Color(0x88FCCC, 33), new Color(0x88FCCC, 100), new Color(0xFFFFFF, 100), 1.0, false);
-		this._shaft_a.setNotch(notch);
 		this._shaft_a.prepare(this.content);
 	}
 
@@ -126,7 +126,6 @@ class descendent.hud.reticle.VitalGauge extends Gauge
 		this._shaft_b = new ReflectArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
 			new Color(0xFF4646, 33), new Color(0xFF4646, 100), new Color(0xFFFFFF, 100), 1.0, false);
 //			new Color(0xFFB1B1, 33), new Color(0xFFB1B1, 100), new Color(0xFFFFFF, 100), 1.0, false);
-		this._shaft_b.setNotch(notch);
 		this._shaft_b.prepare(this.content);
 	}
 
@@ -163,8 +162,6 @@ class descendent.hud.reticle.VitalGauge extends Gauge
 		this._meter_current_b = new ReflectArcBarMeter(this._r, this._angle_a, this._angle_b, this._thickness,
 			null, new Color(0xFF4646, 100), new Color(0xFFFFFF, 100), 1.0, false);
 //			null, new Color(0xFFB1B1, 100), new Color(0xFFFFFF, 100), 1.0, false);
-		var notches:/*Number*/Array = [0.25, 0.50, 0.75];
-		this._meter_current_b.setNotch(notches);
 		this._meter_current_b.prepare(this.content);
 	}
 
@@ -247,6 +244,12 @@ class descendent.hud.reticle.VitalGauge extends Gauge
 			this._shaft = this._shaft_a;
 			this._notch = this._notch_a;
 		}
+		
+		var notches:/*Number*/Array = NotchFactory.generateNotches(dynel);
+		this._meter_current_a.setNotch(notches);
+		this._meter_current_b.setNotch(notches);
+		this._shaft_a.setNotch(notches);
+		this._shaft_b.setNotch(notches);
 
 		this._value_maximum = this._dynel.GetStat(_global.Enums.Stat.e_Life, 2);
 		this._value_current = this._dynel.GetStat(_global.Enums.Stat.e_Health, 2);
