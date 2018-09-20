@@ -140,7 +140,7 @@ class descendent.hud.reticle.NotchFactory
 			////////////////////////////////////////
 			
 			case "The Unutterable Lurker":
-				notches = [0.10, 0.75];
+				notches = [0.10, 0.25, 0.50, 0.67, 0.75];
 				break;
 			// case "The Eidolon of the Outer Dark"
  			// 	notches = [0.50];
